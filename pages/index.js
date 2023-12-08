@@ -6,15 +6,16 @@ function Home() {
   const [values, setValues] = useState('');
 
   const focusInput = () => {
+    newRef.current.focus();
 
   };
   const settingValue = () => {
-
+   setValues(newRef.current.value);
   };
 
   return (
     <div>
-    <InputField  ref={newRef}  type="text"/>
+    <InputField  ref={newRef}  type="text"/>{/*custom*/}
     <br/>
     <button id="settingValueButton" onClick={settingValue}>Set Value</button>
     <button id="focusInputButton" onClick={focusInput}>Focus the input</button><br/><br/>
